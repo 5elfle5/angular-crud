@@ -1,0 +1,1 @@
+Example project with CRUD operations with angular framework.
