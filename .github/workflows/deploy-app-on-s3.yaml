@@ -33,7 +33,7 @@ jobs:
           AWS_REGION: "eu-west-1"
           SOURCE_DIR: "dist"
       - name: Create CloudFront Cache Invalidation
-        uses: chetan/invalidate-cloudfront-action@main
+        uses: 5elfle5/angular-crud@main
         env:
           DISTRIBUTION: ${{ env.AWS_CF_DISTRIBUTION_ID }}
           PATHS: "/*"
