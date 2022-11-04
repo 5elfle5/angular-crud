@@ -22,7 +22,7 @@ jobs:
         run: npm install
       - name: Build Application
         run: npm run-script build
-      - uses: 5elfle5/s3-sync-action@main
+      - uses: 5elfle5/angular-crud@main
         name: Upload App to S3 Bucket
         with:
           args: --follow-symlinks --delete
