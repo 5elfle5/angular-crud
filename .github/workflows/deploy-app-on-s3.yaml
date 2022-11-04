@@ -1,7 +1,7 @@
 name: deploy-app-on-s3
 on:
   pull_request:
-    branches: [master]
+    branches: [develop]
     types: [closed]
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@develop
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -22,7 +22,7 @@ jobs:
         run: npm install
       - name: Build Application
         run: npm run-script build
-      - uses: 5elfle5/s3-sync-action@master
+      - uses: 5elfle5/s3-sync-action@develop
         name: Upload App to S3 Bucket
         with:
           args: --follow-symlinks --delete
@@ -33,7 +33,7 @@ jobs:
           AWS_REGION: "eu-west-1"
           SOURCE_DIR: "dist"
       - name: Create CloudFront Cache Invalidation
-        uses: chetan/invalidate-cloudfront-action@master
+        uses: chetan/invalidate-cloudfront-action@develop
         env:
           DISTRIBUTION: ${{ env.AWS_CF_DISTRIBUTION_ID }}
           PATHS: "/*"
