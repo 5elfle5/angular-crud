@@ -6,6 +6,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: prod
     env:
       AWS_S3_BUCKET_NAME: crud55
       AWS_CF_DISTRIBUTION_ID: E2THKHA94NDNUZ
