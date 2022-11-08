@@ -4,3 +4,4 @@ dist/.DS_Store
 .DS_Store
 .env
 crud-be/dist
+crud-be/.env
