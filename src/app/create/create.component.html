@@ -1,1 +1,7 @@
-<p>create works!</p>
+<form [formGroup]="form">
+  <div>
+    <label for="whoop">Whoop:</label>
+    <input id="whoop" type="text" formControlName="whoop">
+  </div>
+  <button type="submit">Submit</button>
+</form>
