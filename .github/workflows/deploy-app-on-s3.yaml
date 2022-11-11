@@ -17,7 +17,7 @@ jobs:
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
-          path: ./*
+          path: ./crud-be/*
           remote_path: /var/www/crud-api/
           remote_host: ec2-18-223-32-27.us-east-2.compute.amazonaws.com
           remote_user: ubuntu
